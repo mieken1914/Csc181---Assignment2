@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="viewport" content="width=device-width"/>
+<title>My Academy | User {{student._idnum}}</title>
+<!-- STYLES & JQUERY
+================================================== -->
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/icons.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/skinred.css')}}"/><!-- Change skin color here -->
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/css/responsive.css')}}"/>
+<script src="{{url_for('static', filename='js/jquery-1.9.0.min.js')}}"></script><!-- scripts are at the bottom of the document -->
+</head>
+<body>
+<div class="boxedtheme">
+<!-- TOP LOGO & MENU
+================================================== -->
+<div class="grid">
+	<div class="row space-bot">
+		<!--Logo-->
+		<div class="c4">
+			<a href="/">
+			<img src="{{url_for('static', filename='images/logo.png')}}" class="logo" alt="">
+			</a>
+		</div>
+		<!--Menu-->
+		<div class="c8">
+			<nav id="topNav">
+			<ul>
+				<li class="active"><a href="/"><i class="icon-home homeicon"></i></a></li>
+				<li><a href="/add">New Account</a>
+				</li>
+                <li class="last"><a href="/course">View Courses</a>
+				</li>
+
+
+			</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<!-- HEADER
+================================================== -->
+<div class="undermenuarea">
+	<div class="boxedshadow">
+	</div>
+	<div class="grid">
+		<div class="row">
+			<div class="c8">
+				<h1 class="titlehead">PROFILE PAGE</h1>
+			</div>
+			<div class="c4">
+				<h1 class="titlehead rightareaheader"><i class="icon-map-marker"></i> my.academy.edu.ph</h1>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- CONTENT
+================================================== -->
+<div class="grid">
+		<div class="shadowundertop"></div>
+         <div class="row nega-space">
+                <div class="c9"></div>
+                <div class="c3">
+                    <form method="POST" action="/search_results">
+                        <input type="text" name="search_input" value="Search">
+                        <div style="margin-top:-15px; margin-bottom:-20px">
+                            <input type ="radio" name="input_type" value="ID" checked="checked">  ID Number <input type ="radio" name="input_type" value="LN">  Last Name
+                        </div>
+                    </form>
+                </div>
+         </div>
+		<div class="row">
+            <div class="c2">
+                <div class="leftsidebar">
+					<h2 class="title stresstitle">Quick Info:</h2>
+					<hr class="hrtitle">
+
+					<div class="teamdescription">
+						<h1>{{student._lname}}, {{student._fname}}</h1>
+						<span class="hirefor"> ID {{student._idnum}}</span>
+					</div>
+					<br/>
+
+					<div class="teamdescription">
+						<h1>{{college[student._college_id][0]}}</h1>
+						<span class="hirefor"> {{course[student._course_id][0]}}</span>
+					</div>
+				</div>
+            </div>
+
+			<div class="c8">
+				<h1 class="maintitle ">
+				<span>STUDENT # {{student._idnum}}</span>
+				</h1>
+				<text>
+                    Name: {{student._lname}}, {{student._fname}}  {{student._mname}}<br/>
+                    Course: {{course[student._course_id][0]}}<br/>
+                    College: {{college[student._college_id][0]}}<br/>
+                    Year Level: {{student._year_lvl}}<br/>
+                    Gender: {{student._gender}}<br/>
+                    Birthdate: {{student._bdate}}<br/>
+                    Address: {{student._house_num}} {{student._street}}, {{student._brgy}}, {{student._city}}<br/><br/>
+                </text>
+
+			</div>
+
+            <div class="c2">
+                <div class="row space-top" style="text-align:center">
+                    <div row=""><br/></div>
+                    <div row=""><br/></div>
+                    <div class="actionbutton" style="width: 100%">
+                        <a href="{{student._idnum}}/update"> EDIT</a>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="row" style="text-align:center">
+                    <div class="actionbutton" style="width: 100%">
+                        <a href="{{student._idnum}}/delete"> DELETE</a>
+                    </div>
+                </div>
+            </div>
+
+
+		</div>
+		<!-- OUR TEAM
+			================================================== -->
+
+		<!-- CLIENTS
+		================================================== -->
+
+</div><!-- end grid -->
+
+<!-- FOOTER
+================================================== -->
+<div id="wrapfooter">
+	<div class="grid">
+		<div class="row" id="footer">
+			<!-- to top button  -->
+			<p class="back-top floatright">
+				<a href="#top"><span></span></a>
+			</p>
+			<!-- 1st column -->
+			<div class="c3">
+				<img src="{{url_for('static', filename='images/logo-footer.png')}}" style="padding-top: 70px;" alt="">
+			</div>
+			<!-- 2nd column -->
+			<div class="c3">
+				<h2 class="title"><i class="icon-twitter"></i> Follow</h2>
+				<hr class="footerstress">
+				<p>
+                    This is a template made by Salique. Follow them on their social accounts.
+				</p>
+			</div>
+			<!-- 3rd column -->
+			<div class="c3">
+				<h2 class="title"><i class="icon-envelope-alt"></i> Contact</h2>
+				<hr class="footerstress">
+				<dl>
+					<dt>Purok 542, Brgy. Palao, Iligan City</dt>
+					<dd><span>Cellphone: </span>0909-796-1613</dd>
+                    <dd>Github: mieken1914@gmail.com</dd>
+					<dd>E-mail: mieken1914@gmail.com</dd>
+				</dl>
+				<ul class="social-links" style="margin-top:15px;">
+					<li class="twitter-link smallrightmargin">
+					<a href="#" class="twitter rotate has-tip" target="_blank" title="Follow Us on Twitter">Twitter</a>
+					</li>
+					<li class="facebook-link smallrightmargin">
+					<a href="#" class="facebook rotate has-tip" target="_blank" title="Join us on Facebook">Facebook</a>
+					</li>
+					<li class="google-link smallrightmargin">
+					<a href="#" class="google rotate has-tip" title="Google +" target="_blank">Google</a>
+					</li>
+					<li class="linkedin-link smallrightmargin">
+					<a href="#" class="linkedin rotate has-tip" title="Linkedin" target="_blank">Linkedin</a>
+					</li>
+					<li class="pinterest-link smallrightmargin">
+					<a href="#" class="pinterest rotate has-tip" title="Pinterest" target="_blank">Pinterest</a>
+					</li>
+				</ul>
+			</div>
+			<!-- 4th column -->
+			<div class="c3">
+				<h2 class="title"><i class="icon-link"></i> Program Used</h2>
+				<hr class="footerstress">
+				<ul>
+					<li>Jetbeans PyCharm 3.4.1,<br/></li>
+					<li>Python 2.7 IDLE,<br/></li>
+					<li>Adobe Dreamweaver CC<br/></li>
+				</ul>
+			</div>
+			<!-- end 4th column -->
+		</div>
+	</div>
+</div>
+<!-- copyright area -->
+<div class="copyright">
+	<div class="grid">
+		<div class="row">
+			<div class="c6">
+				 Dianalan, As-Harrie D. &copy; 2017. All Rights Reserved.
+			</div>
+			<div class="c6">
+				<span class="right">
+				Premium Template by WowThemesNet </span>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+<!-- JAVASCRIPTS
+================================================== -->
+<!-- all-->
+<script src="{{url_for('static', filename='js/modernizr-latest.js')}}"></script>
+
+<!-- menu & scroll to top -->
+<script src="{{url_for('static', filename='js/common.js')}}"></script>
+
+<!-- testimonial rotator -->
+<script src="{{url_for('static', filename='js/jquery.cycle.js')}}"></script>
+
+<!-- twitter -->
+<script src="{{url_for('static', filename='js/jquery.tweet.js')}}"></script>
+
+<!-- cycle -->
+<script src="{{url_for('static', filename='js/jquery.cycle.js')}}"></script>
+
+<!-- carousel items -->
+<script src="{{url_for('static', filename='js/jquery.carouFredSel-6.0.3-packed.js')}}"></script>
+
+<!-- CALL Showcase - change 5 from min:5 and max:5 to the number of items you want visible -->
+<script type="text/javascript">
+$(window).load(function(){
+			$('#recent-projects').carouFredSel({
+				responsive: true,
+				width: '100%',
+				auto: true,
+				circular	: true,
+				infinite	: false,
+				prev : {
+					button		: "#car_prev",
+					key			: "left"
+						},
+				next : {
+					button		: "#car_next",
+					key			: "right"
+							},
+				swipe: {
+					onMouse: true,
+					onTouch: true
+					},
+				scroll : 2000,
+				items: {
+					visible: {
+						min: 5,
+						max: 5
+					}
+				}
+			});
+		});
+</script>
+
+<!-- CALL opacity on hover images -->
+<script type="text/javascript">
+$(document).ready(function(){
+    $("img.imgOpa").hover(function() {
+      $(this).stop().animate({opacity: "0.6"}, 'slow');
+    },
+    function() {
+      $(this).stop().animate({opacity: "1.0"}, 'slow');
+    });
+  });
+</script>
+
+<!-- CALL tabs -->
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#tabs li a:not(:first)').addClass('inactive');
+	$('.container:not(:first)').hide();
+	$('#tabs li a').click(function(){
+		var t = $(this).attr('href');
+		if($(this).hasClass('inactive')){ //added to not animate when active
+			$('#tabs li a').addClass('inactive');
+			$(this).removeClass('inactive');
+			$('.container').hide();
+			$(t).fadeIn('slow');
+		}
+		return false;
+	}) //end click
+});
+</script>
+</body>
+</html>
