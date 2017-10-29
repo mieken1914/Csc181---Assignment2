@@ -1,0 +1,27 @@
+<!doctype html>
+
+{% if query_type == "A" %}
+<title>Confirm New - {{student._idnum}}</title>
+<h1>Added New Account {{student._idnum}}</h1>
+{% elif query_type == "U" %}
+<title>Confirm Update - {{student._idnum}}</title>
+<h1>Updated Account {{student._idnum}}</h1>
+{% else %}
+<title>Confirm Delete - {{student._idnum}}</title>
+<h1>Deleted Account {{student._idnum}}</h1>
+{% endif %}
+
+<body>
+    <text>
+        Name: {{student._lname}}, {{student._fname}}  {{student._mname}}<br/>
+        Course: {{course[student._course_id][0]}}<br/>
+        College: {{college[student._college_id][0]}}<br/>
+        Year Level: {{student._year_lvl}}<br/>
+        Gender: {{student._gender}}<br/>
+        Birthdate: {{student._bdate}}<br/>
+        Address: {{student._house_num}} {{student._street}}, {{student._brgy}}, {{student._city}}<br/><br/>
+    </text>
+    <form method="POST" action="/">
+        <input type="submit" value="GO TO HOME" />
+    </form>
+</body>

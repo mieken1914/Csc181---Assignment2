@@ -1,0 +1,69 @@
+<!doctype html>
+
+<title>New Account</title>
+<body>
+    <h1>
+        Enter information:
+    </h1>
+    <form method="POST" action="/add/confirm">
+        <table>
+            <tr><td>ID Number:</td><td><input type="text" name="input_id"/></td></tr>
+            <tr>
+                <td>Last Name:</td><td><input type="text" name="input_lname"/></td>
+                <td>First Name:</td><td><input type="text" name="input_fname"/></td>
+                <td>Middle Name:</td><td><input type="text" name="input_mname"/></td>
+            </tr>
+            <tr>
+                <td>Gender: </td>
+                <td><input type ="radio" name="input_gender" value="M" />Male <input type ="radio" name="input_gender" value="F" />Female</td>
+            </tr>
+            <tr>
+                <td> Course: </td>
+                <td>
+                    <select name="input_course">
+                        {% for i in course.keys() %}
+                        <option value={{course[i][2]}}>{{course[i][0]}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+
+                <td> Year Level: </td>
+                <td>
+                    <select name="input_year_lvl">
+                        <option value="1st Year">1st Year</option>
+                        <option value="2nd Year">2nd Year</option>
+                        <option value="3rd Year">3rd Year</option>
+                        <option value="4th Year">4th Year</option>
+                        <option value="Irregular Year">Irregular Year</option>
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Address:</td>
+            </tr>
+            <tr>
+                <td>House Number: </td><td><input type="text" name="input_house_num"/></td>
+                <td>Street: </td><td><input type="text" name="input_street"/></td>
+            </tr>
+            <tr>
+                <td>Barangay: </td><td><input type="text" name="input_brgy"/></td>
+                <td>City: </td><td><input type="text" name="input_city"/></td>
+            </tr>
+            <tr>
+                <td>Birthdate: </td>
+                <td>
+                    <input type="text" id="date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="input_bdate" value="01-01-1980">
+                    <script>
+                        $(function(){
+                            $('#date').combodate();
+                        });
+                    </script>
+                </td>
+            </tr>
+            <tr><td></td><td>(format: YYYY-DD-MM)</td></tr>
+
+        </table>
+        <input type = "submit" value="Submit" />
+    </form>
+</body>

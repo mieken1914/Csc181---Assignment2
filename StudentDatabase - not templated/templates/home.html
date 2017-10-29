@@ -1,0 +1,24 @@
+<!doctype html>
+<title>Student Database</title>
+<h1>STUDENT DATABASE</h1>
+
+<body>
+    <table>
+        <caption>Student List</caption>
+        <tr>
+            <th>Id Number</th>
+            <th>Name</th>
+            <th>College</th>
+            <th>Course</th>
+        </tr>
+        {% for student in student_list %}
+        <tr>
+            <td>{{student._idnum}}</td>
+            <td>{{student._lname}}, {{student._fname}} {{student._mname}}</td>
+            <td>{{college[student._college_id][0]}}</td>
+            <td>{{course[student._course_id][0]}}</td>
+            <td><a href = "profile/{{student._idnum}}">View</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>

@@ -1,0 +1,31 @@
+<!doctype html>
+
+<title>{{student._idnum}} - Information</title>
+<h1>Account {{student._idnum}}</h1>
+<body>
+    <text>
+        Name: {{student._lname}}, {{student._fname}}  {{student._mname}}<br/>
+        Course: {{course[student._course_id][0]}}<br/>
+        College: {{college[student._college_id][0]}}<br/>
+        Year Level: {{student._year_lvl}}<br/>
+        Gender: {{student._gender}}<br/>
+        Birthdate: {{student._bdate}}<br/>
+        Address: {{student._house_num}} {{student._street}}, {{student._brgy}}, {{student._city}}<br/><br/>
+    </text>
+    <table>
+        <tr>
+            <td>
+                <form method="POST" action="{{student._idnum}}/update">
+                    <input type="submit" value="Edit" />
+                </form>
+            </td>
+            <td>
+                <form method="POST" action="{{student._idnum}}/delete">
+                    <input type="submit" value="Delete" />
+                </form>
+            </td>
+        </tr>
+    </table>
+
+
+</body>

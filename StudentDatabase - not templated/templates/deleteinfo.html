@@ -1,0 +1,25 @@
+<!doctype html>
+
+<title>{{student._idnum}} - Delete</title>
+<body>
+    <h1>DELETE USER {{student._idnum}}</h1>
+    <table>
+        <tr>
+            <td>
+                <form method="POST" action="/profile/{{student._idnum}}/delete/confirm">
+                    <input type="submit" value="CONFIRM">
+                </form>
+            </td>
+
+            <td>
+                <form method="" action="/profile/{{student._idnum}}">
+                    <input type="submit" value="CANCEL">
+                </form>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+</body>
